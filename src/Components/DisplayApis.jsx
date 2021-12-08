@@ -5,7 +5,6 @@ import Ticketmaster from "./Ticketmaster";
 
 const DisplayApis = () => {
 
-
     return(
         <div>
             <NASA />
