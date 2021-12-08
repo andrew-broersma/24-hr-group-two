@@ -5,27 +5,38 @@ import DisplayApis from './Components/DisplayApis';
 function App() {
 
   const [location, setLocation] = useState("");
+  const[lat, setLat] = useState(0);
+  const[lon, setLon] = useState(0);
 
-
+  useEffect(() => {  
   const fetchLocation = () => {
+
+
 
     let url = "http://ip-api.com/json/"
 
     fetch(url)
     .then((res) => res.json())
-    .then((data) => setLocation(data))
+    .then((data) => {
+      setLocation(data);
+      setLat(data.lat);
+      setLon(data.lon);
+    })
     .catch((err) => err)
-
+    
   }
+  
   console.log(location)
-
-  useEffect(() => {
+  console.log(lat)
+  console.log(lon)
+  
+  
     fetchLocation();
-  }, [])
+  }, [setLon])
 
   return (
     <div >
-      <DisplayApis location={location}/>
+      <DisplayApis location={location} lat={lat} lon={lon} />
     </div>
   );
 }
