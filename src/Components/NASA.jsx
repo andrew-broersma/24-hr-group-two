@@ -12,6 +12,8 @@ const NASA = (props) => {
     .then(res => res.json())
     .then(data => console.log(data))
 
+const NASA = () => {
+
     return(
         <div id="displayAPI">
             
