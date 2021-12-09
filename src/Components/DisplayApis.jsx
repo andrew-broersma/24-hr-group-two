@@ -8,7 +8,7 @@ const DisplayApis = (props) => {
     return(
         <div>
             <NASA location={props.location} />
-            <Weather location={props.location} lat={props.lat} lon={props.lon} />
+            <Weather lat={props.lat} lon={props.lon} />
             <Ticketmaster location={props.location} />
         </div>
     )
