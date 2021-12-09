@@ -11,6 +11,23 @@ function App () {
   useEffect(() => {
 
 
+
+    if ("geolocation" in navigator) {
+      console.log("Available");
+    } else {
+      console.log("Not Available");
+    }
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+      setLat(position.coords.latitude);
+      setLon(position.coords.longitude);
+      
+    });
+    // console.log(lat, lon);
+  }, []);
+
+
+
     if ("geolocation" in navigator) {
       console.log("Available");
     } else {
@@ -24,8 +41,6 @@ function App () {
     });
     console.log(lat, lon);
   });
-
-  
 
   return(
     <div>
@@ -82,3 +97,6 @@ export default App;
 // }
 
 // export default App;
+
+// export default App;
+
