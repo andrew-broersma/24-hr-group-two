@@ -5,18 +5,16 @@ const NASA = (props) => {
     const [imgLoc, setImgLoc] = useState('');
 
     useEffect(() => {
-    // let baseUrl = 'https://api.nasa.gov/planetary/earth/assets?'
+    let baseUrl = 'https://api.nasa.gov/planetary/earth/assets?'
     let key = "NtWLeBK7GzAuLtezLszttTOy3zNB4KodhFU0mWX9"
-    let date = new Date();
-    let urlDate = date.getFullYear()+ '-' +(date.getMonth() + 1) + '-' + date.getDate()
-    // let url = `${baseUrl}lon=${Math.round(props.lon * 100) / 100}&lat=${Math.round(props.lat * 100) / 100}&date=${urlDate}&api_key=${key}`
 
-    let possibleUrlFix = `https://api.nasa.gov/planetary/earth/imagery?lon=${Math.round(props.lon * 100) / 100}&lat=${Math.round(props.lat * 100) / 100}&date=${urlDate}&api_key=${key}`
-
-    console.log(possibleUrlFix);
+    let url = `${baseUrl}lon=${props.lon}&lat=${props.lat}&date=2020-5-3&api_key=${key}`
 
 
-        fetch(possibleUrlFix)
+    console.log(url);
+
+
+        fetch(url)
         .then((res) => res.json())
         .then((data) => setImgLoc(data.url))
         .catch((err) => console.log(err))
