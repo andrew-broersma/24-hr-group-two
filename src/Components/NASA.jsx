@@ -7,8 +7,11 @@ const NASA = (props) => {
     useEffect(() => {
     let baseUrl = 'https://api.nasa.gov/planetary/earth/assets?'
     let key = "NtWLeBK7GzAuLtezLszttTOy3zNB4KodhFU0mWX9"
-    let url = `${baseUrl}lon=${props.lon}&lat=${props.lat}&api_key=${key}`
-    // console.log(url);
+
+    let url = `${baseUrl}lon=${props.lon}&lat=${props.lat}&date=2020-05-03&api_key=${key}`
+
+
+    console.log(url);
 
 
         fetch(url)

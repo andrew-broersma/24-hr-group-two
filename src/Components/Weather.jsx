@@ -15,6 +15,7 @@ const Weather = (props) => {
     const[tempHigh, setTempHigh] = useState('');
     const[tempLow, setTempLow] = useState('');
     const[forecast, setForecast] = useState('');
+    const[far, setFar] = useState(true)
 
 
     let url = `https://api.openweathermap.org/data/2.5/weather?lat=${props.lat}&lon=${props.lon}&appid=d2ea12a3e650523d00a03398b8056363`
@@ -33,17 +34,27 @@ const Weather = (props) => {
     .catch((err) => err)
     console.log(temp);
 
-
     }, [props])
 
-
-
-    // const kelvintoFar = (kelvin) => {
-    //     return (kelvin - 273.15) * 9/5 + 32;
-    // }
-
 const kToF = (convert) => {
-    return (convert - 273.15) * 9/5 +32}
+    return (convert - 273.15) * 9/5 +32
+}
+
+const kToC = (convert) => {
+    return convert - 273.15
+}
+
+    const tempToggle = (thl) => {
+        return far ? kToF(thl) : kToC(thl)
+    }
+
+    const fSym = 'Fahrenheit'
+    const cSym = 'Celsius'
+
+    const degreeSym= () => {
+
+        return far ? fSym : cSym
+    }
 
 //     function tempToggle()
 // {
@@ -59,11 +70,7 @@ const kToF = (convert) => {
     display C, change button value to F
 
     if temp is C
-    display F, change button value to
-
-
-    if temp is C
-    display F, change button value to
+    display F, change button value to C
 
 */
 
@@ -77,19 +84,19 @@ const kToF = (convert) => {
                         Temp:
                     </CardSubtitle>
                     <CardText>
-                        {Math.round(kToF(temp))}&#8457;
+                        {Math.round(tempToggle(temp))}&#176;
                     </CardText>
                     <CardSubtitle className="mb-2" tag="h6">
                         High:
                     </CardSubtitle>
                     <CardText>
-                        {Math.round(kToF(tempHigh))}&#8457;
+                        {Math.round(tempToggle(tempHigh))}&#176;
                     </CardText>
                     <CardSubtitle className="mb-2" tag="h6">
                         Low:
                     </CardSubtitle>
                     <CardText>
-                    {Math.round(kToF(tempLow))}&#8457;
+                    {Math.round(tempToggle(tempLow))}&#176;
                     </CardText>
                     <CardSubtitle className="mb-2" tag="h6">
                         Forecast:
@@ -98,7 +105,7 @@ const kToF = (convert) => {
                         {forecast}
                     </CardText>
                     <div style={{alignContent: "center", display: "flex", justifyContent: "center"}}>
-                        <Button id="toggleButton" type="submit">Convert Temp</Button>
+                        <Button onClick={(e) => {far ? setFar(false) : setFar(true)}} id="toggleButton" type="submit">{degreeSym()}</Button>
                     </div>
                 </CardBody>
             </Card>

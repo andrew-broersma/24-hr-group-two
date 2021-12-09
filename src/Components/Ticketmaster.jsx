@@ -21,6 +21,7 @@ const Ticketmaster = ({ lat, lon }) => {
         fetchEvents(url);
     }, [lon]);
 
+
     console.log(events)
     return (
         <>
@@ -28,5 +29,6 @@ const Ticketmaster = ({ lat, lon }) => {
         </>
     )
 }
+
 
 export default Ticketmaster;
