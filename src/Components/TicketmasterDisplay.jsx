@@ -1,14 +1,14 @@
 import React from "react";
 
-const TicketmasterDisplay = (props) => {
+const TicketmasterDisplay = ({events}) => {
     return(
         <>
         {
-            props.events.map((events, key) => {
+            events.map((events, key) => {
                 return(
                     <tbody>
-                        <tr >
-                            <th scope="row" key={key}>
+                        <tr key={events.id}>
+                            <th scope="row" >
                                 {events.name}
                             </th>
                         </tr>
