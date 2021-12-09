@@ -45,6 +45,10 @@ const Weather = (props) => {
 const kToF = (convert) => {
     return (convert - 273.15) * 9/5 +32}
 
+const fToC = (convert) => {
+    return (convert - 32) / 1.8000
+}
+
 //     function tempToggle()
 // {
 //     const toggle = document.getElementById("toggleButton");
