@@ -1,11 +1,10 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
-
-const Ticketmaster = () => {
+const Ticketmaster = (props) => {
 
 
     return(
-        <div>
+        <div id=''>
             
         </div>
     )

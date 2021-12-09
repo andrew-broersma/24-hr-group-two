@@ -65,6 +65,10 @@ const fToC = (convert) => {
     if temp is C
     display F, change button value to
 
+
+    if temp is C
+    display F, change button value to
+
 */
 
     return(

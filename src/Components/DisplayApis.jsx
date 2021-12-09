@@ -7,11 +7,10 @@ const DisplayApis = (props) => {
 
     return(
         <div>
-            <NASA location={props.location} />
-            <Weather lat={props.lat} lon={props.lon} />
-            <Ticketmaster location={props.location} />
+            <NASA  lat={props.lat} lon={props.lon}/>
+            <Weather lat={props.lat} lon={props.lon}/>
+            <Ticketmaster lat={props.lat} lon={props.lon}/>
         </div>
     )
 }
-
-export default DisplayApis;
+export default DisplayApis
