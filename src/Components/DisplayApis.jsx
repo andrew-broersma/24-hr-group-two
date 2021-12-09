@@ -11,11 +11,11 @@ const DisplayApis = (props) => {
             <NASA location={props.location} />
             <Weather lat={props.lat} lon={props.lon} />
             <Table
-                        bordered
-                        dark
-                        responsive
-                        striped
-                    >
+                bordered
+                dark
+                responsive
+                striped
+            >
                         <thead>
                             <tr>
                                 <th>
