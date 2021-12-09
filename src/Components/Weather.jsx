@@ -57,8 +57,14 @@ const kToF = (convert) => {
 /*
     if temp is F
     display C, change button value to F
+
     if temp is C
     display F, change button value to
+
+
+    if temp is C
+    display F, change button value to
+
 */
 
     return(
