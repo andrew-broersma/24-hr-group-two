@@ -16,10 +16,10 @@ function App () {
     }
 
     navigator.geolocation.getCurrentPosition(function(position) {
-      console.log(navigator.geolocation);
+      // console.log(navigator.geolocation);
       setLat(position.coords.latitude);
       setLon(position.coords.longitude);
-      console.log(position);
+      // console.log(position);
     });
     console.log(lat, lon);
   }, []);

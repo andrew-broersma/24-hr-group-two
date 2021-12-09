@@ -15,7 +15,7 @@ const DisplayApis = (props) => {
                         NASA api
                     </AccordionHeader>
                     <AccordionItem accordionId="1">
-                        <NASA location={props.location} />
+                        <NASA location={props.location} lat={props.lat} lon={props.lon}/>
                     </AccordionItem>
                 </AccordionItem>
                 <AccordionItem>
