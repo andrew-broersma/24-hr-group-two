@@ -7,7 +7,7 @@ const NASA = (props) => {
     useEffect(() => {
     let baseUrl = 'https://api.nasa.gov/planetary/earth/assets?'
     let key = "NtWLeBK7GzAuLtezLszttTOy3zNB4KodhFU0mWX9"
-    let url = `${baseUrl}lon=${props.lon}&lat=${props.lat}&date=2020-12-20&api_key=${key}`
+    let url = `${baseUrl}lon=${props.lon}&lat=${props.lat}&api_key=${key}`
     // console.log(url);
 
 
@@ -16,8 +16,6 @@ const NASA = (props) => {
         .then((data) => setImgLoc(data.url))
         .catch((err) => console.log(err))
     }, [props])
-
-const NASA = () => {
 
     return(
         <div id="displayAPI">
