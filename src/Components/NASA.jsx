@@ -1,20 +1,23 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 const NASA = (props) => {
 
-    const [lat, setLat] = useState('');
-    const [lon, setLon] = useState('');
+    const [imgLoc, setImgLoc] = useState('');
 
-    let url = `https://api.nasa.gov/planetary/earth/imagery?${lon}&${lat}&api_key=${API_KEY}`
+    useEffect(() => {
+    let baseUrl = 'https://api.nasa.gov/planetary/earth/assets?'
+    let key = "NtWLeBK7GzAuLtezLszttTOy3zNB4KodhFU0mWX9"
+    let url = `${baseUrl}lon=${props.lon}&lat=${props.lat}&date=2020-12-20&api_key=${key}`
+    // console.log(url);
 
-
-    fetch(url)
-    .then(res => res.json())
-    .then(data => console.log(data))
-
+        fetch(url)
+        .then((res) => res.json())
+        .then((data) => setImgLoc(data.url))
+        .catch((err) => console.log(err))
+    }, [props])
     return(
         <div id="displayAPI">
-            
+            <img src={imgLoc} alt="" style={{width: '200px', height: '200px'}}/>
         </div>
     )
 }

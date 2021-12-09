@@ -3,12 +3,12 @@ import NASA from "./NASA";
 import Weather from "./Weather";
 import Ticketmaster from "./Ticketmaster";
 
-const DisplayApis = () => {
+const DisplayApis = (props) => {
     return(
         <div>
-            <NASA />
-            <Weather />
-            <Ticketmaster />
+            <NASA  lat={props.lat} lon={props.lon}/>
+            <Weather lat={props.lat} lon={props.lon}/>
+            <Ticketmaster lat={props.lat} lon={props.lon}/>
         </div>
     )
 }
